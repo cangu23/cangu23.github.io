@@ -12,7 +12,21 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fondo estelar con partículas */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><circle cx="100" cy="100" r="2" fill="white" opacity="0.8"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="200" cy="300" r="1" fill="white" opacity="0.6"><animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/></circle><circle cx="400" cy="200" r="3" fill="white" opacity="0.7"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/></circle><circle cx="600" cy="500" r="2" fill="white" opacity="0.5"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="700" cy="300" r="1" fill="white" opacity="0.9"><animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/></circle></svg>') repeat;
+    pointer-events: none;
+    z-index: -1;
 }
 
 header {
@@ -20,15 +34,38 @@ header {
 }
 
 .logo {
-    max-width: 200px;
+    max-width: 300px;
     height: auto;
     margin: 0 auto;
     display: block;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2) drop-shadow(0 0 10px #00b7ff);
 }
 
 header p {
     font-size: 18px;
     color: #b0b0b0;
+    margin-bottom: 20px;
+}
+
+.join-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #7289da;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.join-btn:hover {
+    background-color: #5a6eb4;
 }
 
 .download-section {
@@ -88,13 +125,47 @@ header p {
     background-color: #008ecc;
 }
 
+.about-section {
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin: 0 20px;
+}
+
+.about-section h2 {
+    font-size: 32px;
+    color: #00b7ff;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00b7ff;
+}
+
 footer {
-    padding: 20px;
+    padding: 40px 20px;
     background-color: #0f0f1a;
     border-top: 1px solid #00b7ff;
+}
+
+.footer-logo {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 footer p {
     font-size: 14px;
     color: #b0b0b0;
+    margin-top: 20px;
 }
