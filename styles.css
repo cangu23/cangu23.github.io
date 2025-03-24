@@ -15,16 +15,15 @@ body {
     justify-content: space-between;
 }
 
-/* Encabezado */
 header {
     padding: 40px 20px;
 }
 
-header h1 {
-    font-size: 48px;
-    color: #fff;
-    text-shadow: 0 0 10px #00b7ff;
-    margin-bottom: 10px;
+.logo {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 header p {
@@ -32,7 +31,6 @@ header p {
     color: #b0b0b0;
 }
 
-/* Sección de descargas */
 .download-section {
     padding: 40px 20px;
 }
@@ -90,7 +88,6 @@ header p {
     background-color: #008ecc;
 }
 
-/* Footer */
 footer {
     padding: 20px;
     background-color: #0f0f1a;
